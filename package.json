@@ -1,0 +1,44 @@
+{
+	"name": "@schneeball2/bausteine",
+	"version": "0.1.0",
+	"description": "Gemeinsame Svelte-Bausteine für die eigenen Apps (Reise-App, Kniffelblock)",
+	"type": "module",
+	"svelte": "./src/WischZeile.svelte",
+	"exports": {
+		"./WischZeile.svelte": {
+			"types": "./src/WischZeile.svelte",
+			"svelte": "./src/WischZeile.svelte",
+			"default": "./src/WischZeile.svelte"
+		},
+		"./herunterziehen": {
+			"types": "./src/herunterziehen.d.ts",
+			"default": "./src/herunterziehen.js"
+		},
+		"./zurueckgeholt": {
+			"types": "./src/zurueckgeholt.d.ts",
+			"default": "./src/zurueckgeholt.js"
+		},
+		"./test/wischen": {
+			"types": "./src/test/wischen.d.ts",
+			"default": "./src/test/wischen.js"
+		}
+	},
+	"files": [
+		"src"
+	],
+	"peerDependencies": {
+		"svelte": "^5.57.0"
+	},
+	"scripts": {
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"lint": "prettier --check ."
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.60.0",
+		"prettier": "^3.8.3",
+		"prettier-plugin-svelte": "^4.1.0",
+		"svelte": "^5.57.1",
+		"svelte-check": "^4.6.0",
+		"typescript": "^6.0.3"
+	}
+}
