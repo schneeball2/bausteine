@@ -13,11 +13,12 @@ Nur Bedienelemente – keine Daten, keine Schlüssel.
 ## Einbinden
 
 ```json
-"@schneeball2/bausteine": "github:schneeball2/bausteine#v0.1.0"
+"@schneeball2/bausteine": "github:schneeball2/bausteine#<commit>"
 ```
 
-Immer auf eine Version (Tag). Ein Fix: hier ändern, neuen Tag, dann in jeder App die Version anheben –
-mit eigenem Pull Request und Klicktests dort.
+Immer auf einen festen Stand (ganze Commit-Prüfsumme; Tags kann Claude aus der Sitzung nicht pushen).
+Ein Fix: hier ändern, `version` in `package.json` anheben, dann in jeder App den Stand anheben – mit
+eigenem Pull Request und Klicktests dort.
 
 Farben kommen aus der App: `--wisch-flaeche`, `--wisch-linie`, `--wisch-rot` (sonst `--karte`,
 `--rand`, ein festes Rot).

@@ -5,7 +5,7 @@ CLAUDE.md, Texte und Bezeichner auf Deutsch). Öffentlich: nie Daten, Adressen, 
 
 - Kein Build: Svelte-Dateien und JavaScript (mit JSDoc und `.d.ts`) werden so ausgeliefert, die Apps
   übersetzen selbst. Keine Abhängigkeiten außer `svelte` (peer).
-- Jede Änderung mit neuem Tag (`v0.x.y`, Semver); die Apps heben die Version per Pull Request an und
+- Jede Änderung mit neuer `version` (Semver); die Apps heben den Stand (Commit) per Pull Request an und
   testen dort mit ihren Klicktests (Chromium und WebKit) – hier gibt es nur `npm run check` und
   `npm run lint`.
 - Verhalten nicht still ändern: Was eine App heute tut, bleibt Standard; Neues über Optionen.
