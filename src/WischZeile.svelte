@@ -25,11 +25,14 @@
 	// ein Menü der App mit „Öffnen“ (erster Link der Zeile) und Löschen. Kommt eine Zeile kurz nach
 	// `zurueckgeholt()` (zurueckgeholt.js) neu in die Liste, gleitet sie auf. Farben aus der App:
 	// `--wisch-flaeche` (sonst `--karte`), `--wisch-linie` (sonst `--rand`), `--wisch-rot`.
+	// Mit `pruefen` fragt die Zeile vorher, ob gelöscht werden darf (Grund zeigen, Rückfrage) –
+	// solange steht sie noch da; `false` lässt sie zurückgleiten, ohne zu klappen (seit 0.2.0).
 	import { onDestroy, type Snippet } from 'svelte';
 	import { geradeZurueckgeholt } from './zurueckgeholt.js';
 
 	let {
 		onloeschen,
+		pruefen,
 		text = 'Löschen',
 		einzug = 16,
 		durchwischen = true,
@@ -39,6 +42,9 @@
 	}: {
 		/** Löschen wie auf der Detailseite (mit „Rückgängig“) */
 		onloeschen: () => void | Promise<void>;
+		/** Vor dem Löschen, solange die Zeile noch steht: false (oder ein Fehler) = nicht löschen,
+		 *  die Zeile gleitet zurück. Für einen Grund oder eine Rückfrage der App. */
+		pruefen?: () => boolean | Promise<boolean>;
 		/** Beschriftung des roten Knopfs */
 		text?: string;
 		/** Innenabstand der Liste links und rechts in px */
@@ -127,6 +133,21 @@
 	async function loeschen() {
 		if (weg) return;
 		weg = true;
+		if (pruefen) {
+			let darf = false;
+			try {
+				darf = await pruefen();
+			} catch {
+				darf = false;
+			}
+			if (!darf) {
+				// Nicht gelöscht, nichts ist geklappt: zurück in die Ruhe
+				bereit = false;
+				weg = false;
+				schliessen();
+				return;
+			}
+		}
 		if (offeneSchliessen === schliessen) offeneSchliessen = null;
 		versatz = -wurzel.offsetWidth;
 		if (!ruhig()) {

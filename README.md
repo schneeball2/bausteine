@@ -20,5 +20,8 @@ Immer auf einen festen Stand (ganze Commit-Prüfsumme; Tags kann Claude aus der 
 Ein Fix: hier ändern, `version` in `package.json` anheben, dann in jeder App den Stand anheben – mit
 eigenem Pull Request und Klicktests dort.
 
+`WischZeile` mit `pruefen` (seit 0.2.0): vor dem Löschen, solange die Zeile noch steht – `false`
+lässt sie zurückgleiten (z. B. „steht noch in Ausgaben“ oder eine Rückfrage, die mit ✕ endet).
+
 Farben kommen aus der App: `--wisch-flaeche`, `--wisch-linie`, `--wisch-rot` (sonst `--karte`,
 `--rand`, ein festes Rot).
