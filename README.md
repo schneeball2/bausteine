@@ -29,3 +29,9 @@ Farben kommen aus der App: `--wisch-flaeche`, `--wisch-linie`, `--wisch-rot` (so
 Bewegung kommt aus der App, wenn sie welche hat (seit 0.3.0): `--dauer-klein` und `--feder` für das
 Gleiten von `WischZeile` und `herunterziehen` (sonst wie bisher 0,2 s bzw. 0,22 s und `ease`). Die
 Wartezeiten im Skript rechnen mit 0,2 s – `--dauer-klein` bleibt deshalb bei 0,2 s.
+
+Seit 0.4.0 auch (aus der Reise-App, in Tricount gleich): `ZweiSpalten` (Grenze `BREIT_AB` in
+`zweispalten`; unten bis `--ueber-leiste` bzw. `--ueber-unten`), `InfoKnopf` (Rahmen der Blase
+`--infoknopf-rand`), `Schalter`, `HeldAngabe` und `weitergeben` (`weitergebenMit(zeigeHinweis)` gibt
+`kopieren` und `teilen` mit dem Hinweis der App). Größen, Ecken und Dauern kommen aus den Tokens der
+App (`--groesse-…`, `--radius-…`, `--dauer-…`, `--feder`), ohne sie gelten die bisherigen Werte.

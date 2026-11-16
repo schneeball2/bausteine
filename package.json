@@ -1,7 +1,7 @@
 {
 	"name": "@schneeball2/bausteine",
-	"version": "0.3.0",
-	"description": "Gemeinsame Svelte-Bausteine für die eigenen Apps (Reise-App, Kniffelblock)",
+	"version": "0.4.0",
+	"description": "Gemeinsame Svelte-Bausteine für die eigenen Apps (Reise-App, Tricount, Kniffelblock)",
 	"type": "module",
 	"svelte": "./src/WischZeile.svelte",
 	"exports": {
@@ -17,6 +17,34 @@
 		"./zurueckgeholt": {
 			"types": "./src/zurueckgeholt.d.ts",
 			"default": "./src/zurueckgeholt.js"
+		},
+		"./ZweiSpalten.svelte": {
+			"types": "./src/ZweiSpalten.svelte",
+			"svelte": "./src/ZweiSpalten.svelte",
+			"default": "./src/ZweiSpalten.svelte"
+		},
+		"./InfoKnopf.svelte": {
+			"types": "./src/InfoKnopf.svelte",
+			"svelte": "./src/InfoKnopf.svelte",
+			"default": "./src/InfoKnopf.svelte"
+		},
+		"./Schalter.svelte": {
+			"types": "./src/Schalter.svelte",
+			"svelte": "./src/Schalter.svelte",
+			"default": "./src/Schalter.svelte"
+		},
+		"./HeldAngabe.svelte": {
+			"types": "./src/HeldAngabe.svelte",
+			"svelte": "./src/HeldAngabe.svelte",
+			"default": "./src/HeldAngabe.svelte"
+		},
+		"./zweispalten": {
+			"types": "./src/zweispalten.d.ts",
+			"default": "./src/zweispalten.js"
+		},
+		"./weitergeben": {
+			"types": "./src/weitergeben.d.ts",
+			"default": "./src/weitergeben.js"
 		},
 		"./test/wischen": {
 			"types": "./src/test/wischen.d.ts",
