@@ -423,8 +423,10 @@
 	}
 
 	/* Gelöscht: die Zeile klappt zusammen, statt dass die Liste springt */
+	/* Dauer und Kurve aus der App, wenn sie welche hat (--dauer-klein, --feder); die Wartezeiten im
+	   Skript rechnen mit 0,2 s – die App hält --dauer-klein deshalb bei 0,2 s */
 	.wisch.klappt {
-		transition: height 0.2s ease;
+		transition: height var(--dauer-klein, 0.2s) var(--feder, ease);
 	}
 
 	.vorne {
@@ -435,7 +437,7 @@
 		   nicht die Vorschau des Links */
 		touch-action: pan-y;
 		-webkit-touch-callout: none;
-		transition: transform 0.22s ease;
+		transition: transform var(--dauer-klein, 0.22s) var(--feder, ease);
 	}
 
 	.vorne.zieht {

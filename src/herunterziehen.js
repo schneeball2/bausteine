@@ -25,7 +25,12 @@ export function herunterziehen(o) {
 
 		/** @param {number} dy @param {boolean} gleiten */
 		function setzen(dy, gleiten) {
-			blatt.style.transition = gleiten && !ohneBewegung() ? 'transform 0.2s ease-out' : 'none';
+			// Dauer und Kurve aus der App, wenn sie welche hat (--dauer-klein, --feder); das Schließen
+			// wartet 200 ms – die App hält --dauer-klein deshalb bei 0,2 s
+			blatt.style.transition =
+				gleiten && !ohneBewegung()
+					? 'transform var(--dauer-klein, 0.2s) var(--feder, ease-out)'
+					: 'none';
 			const weg = fest() ? dy / 4 : dy;
 			blatt.style.transform = weg > 0 ? `translateY(${weg}px)` : '';
 		}
