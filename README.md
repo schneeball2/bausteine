@@ -25,3 +25,7 @@ lässt sie zurückgleiten (z. B. „steht noch in Ausgaben“ oder eine Rückfra
 
 Farben kommen aus der App: `--wisch-flaeche`, `--wisch-linie`, `--wisch-rot` (sonst `--karte`,
 `--rand`, ein festes Rot).
+
+Bewegung kommt aus der App, wenn sie welche hat (seit 0.3.0): `--dauer-klein` und `--feder` für das
+Gleiten von `WischZeile` und `herunterziehen` (sonst wie bisher 0,2 s bzw. 0,22 s und `ease`). Die
+Wartezeiten im Skript rechnen mit 0,2 s – `--dauer-klein` bleibt deshalb bei 0,2 s.

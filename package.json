@@ -1,6 +1,6 @@
 {
 	"name": "@schneeball2/bausteine",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Gemeinsame Svelte-Bausteine für die eigenen Apps (Reise-App, Kniffelblock)",
 	"type": "module",
 	"svelte": "./src/WischZeile.svelte",
